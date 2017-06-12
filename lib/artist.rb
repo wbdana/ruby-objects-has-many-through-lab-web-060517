@@ -1,8 +1,9 @@
 class Artist
 
-  attr_accessor :name, :songs
-
-  @@all = []
+  attr_accessor :songs
+  attr_reader :name
+  #
+  # @@all = []
 
   def initialize(name)
     @name = name
@@ -14,16 +15,12 @@ class Artist
     song.artist = self
   end
 
-  def songs
-    @songs
-  end
-
   def genres
     self.songs.collect{|song| song.genre}
   end
-
-  def self.all
-    @@all
-  end
+  # 
+  # def self.all
+  #   @@all
+  # end
 
 end

@@ -3,12 +3,12 @@ require 'pry'
 class Genre
 
 
-  attr_accessor :name, :songs, :artists
+  attr_accessor :name, :songs
 
   def initialize(name)
     @name = name
     @songs = []
-    @artists = []
+    # @artists = []
   end
 
   def songs
@@ -20,13 +20,17 @@ class Genre
   end
 
   def artists
-    @songs.each do |song|
-      # binding.pry
-      if !@artists.include?(song.artist)
-        @artists << song.artist
-      end
-    end
-    @artists
+    @songs.collect { |song| song.artist }
   end
+
+  # def artists
+  #   @songs.each do |song|
+  #     # binding.pry
+  #     if !@artists.include?(song.artist)
+  #       @artists << song.artist
+  #     end
+  #   end
+  #   @artists
+  # end
 
 end
