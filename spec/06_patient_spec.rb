@@ -6,7 +6,7 @@ describe "Patient" do
   let!(:appointment) { Appointment.new("Friday, January 32nd", doctor_who) }
 
   describe "#new" do
-    it "initializes with a name" do 
+    it "initializes with a name" do
       expect{Patient.new("Sophie")}.to_not raise_error
     end
   end

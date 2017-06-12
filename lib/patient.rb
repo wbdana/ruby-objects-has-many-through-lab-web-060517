@@ -1,13 +1,18 @@
 class Patient
 
-  attr_accessor :name
+  attr_accessor :name, :allergies, :illness
   attr_reader :appointments
 
   def initialize(name)
     @name = name
     @appointments = []
+    @allergies = []
     # @doctors = []
   end
+
+  # def add_allergy=(allergy)
+    ## Needed if allergies are not passed in as array
+  # end
 
   # def appointments
   #   @appointments
